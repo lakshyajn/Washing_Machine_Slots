@@ -1,4 +1,5 @@
-"use client"
+"use client";
+
 import Link from "next/link";
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
@@ -18,20 +19,22 @@ const calendarOptions = {
     },
   },
   selectable: true,
-  };
+};
 
-export default function Book(){
-  return(
-    <div className="booking-wrapper flex-col">
-    <div className="justify-center items-center flex">
-        <div className="text-[#111111] font-sans font-semibold relative items-center justify-center text-lg mt-4">Book Your Slots Now</div>
-    </div>
-    <div className="mt-4 border border-spacing-1">
-      <div>Select your slot from this week</div>
-      <div className="flex items-center justify-center h-screen">
-    <FullCalendar {...calendarOptions} />
-  </div>
-    </div>
+export default function Book() {
+  return (
+    <div className="booking-wrapper flex flex-col items-center p-6 bg-gray-100 min-h-screen">
+      <div className="text-center text-2xl font-bold text-gray-800 mt-8">
+        Book Your Slots Now
+      </div>
+      <div className="mt-4 bg-white rounded-lg shadow-md p-6 w-full max-w-4xl">
+        <div className="text-center text-lg font-medium text-gray-600 mb-4">
+          Select your slot from this week
+        </div>
+        <div className="flex items-center justify-center">
+          <FullCalendar {...calendarOptions} />
+        </div>
+      </div>
     </div>
   );
 }
